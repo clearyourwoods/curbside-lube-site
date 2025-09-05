@@ -35,3 +35,4 @@ This project includes a GitHub Actions workflow at `.github/workflows/deploy.yml
 - **Send via Mail App** works out‑of‑the‑box.
 - Optional in‑app sending via **EmailJS**: set `useEmailJS` to `true` in `src/App.jsx` and provide your keys.
 
+// trigger deploy
