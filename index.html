@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mobile Oil Caddie</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <div class="droplet" aria-hidden="true"></div>
+      <h1>Mobile Oil Caddie</h1>
+    </div>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#book">Book now</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div class="hero-text">
+        <h2>Oil changes brought to you.</h2>
+        <p>Driveway, office, or jobsite—we come to you. Enter your details and we’ll bring the right oil and filter for your vehicle.</p>
+        <div class="cta">
+          <a class="btn primary" href="#book">Book your oil change</a>
+          <a class="btn" href="#how">How it works</a>
+        </div>
+
+        <div class="logo-grid" aria-label="Logos">
+          <img src="./public/logos/logo1.png" alt="Mobile Oil Caddie wordmark"/>
+          <img src="./public/logos/logo2.png" alt="Mobile Oil Caddie badge"/>
+          <img src="./public/logos/logo3.png" alt="Mobile Oil Caddie monogram"/>
+          <img src="./public/logos/logo4.png" alt="Mobile Oil Caddie pin"/>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Fast booking</h3>
+        <ul>
+          <li>Optional VIN decode to confirm specs</li>
+          <li>We bring the oil and filter</li>
+          <li>Typical service: 30–45 minutes</li>
+        </ul>
+        <p class="note"><strong>Heads‑up:</strong> Suggestions are best‑effort from a small database & heuristics; we verify before service.</p>
+      </aside>
+    </section>
+
+    <section id="how" class="container how">
+      <h3>How it works</h3>
+      <div class="steps">
+        <div class="card step"><h4>Tell us where</h4><p>Give your driveway, office, or a map pin.</p></div>
+        <div class="card step"><h4>Tell us your vehicle</h4><p>Enter year/make/model—or just the VIN.</p></div>
+        <div class="card step"><h4>We handle the rest</h4><p>We bring the right oil & filter and service on‑site.</p></div>
+      </div>
+
+      <details class="tests" id="tests" open>
+        <summary>Developer self‑tests</summary>
+        <ul id="test-list"></ul>
+      </details>
+    </section>
+
+    <section id="book" class="container book">
+      <div class="card">
+        <h3>Book now</h3>
+        <p class="muted">Enter your info. We’ll prepare an email with your details and the oil/filter we believe your vehicle needs.</p>
+
+        <form id="booking-form" onsubmit="return false;">
+          <label>Service location
+            <input id="location" placeholder="123 Main St, City, ST or 44.02, -92.85"/>
+          </label>
+
+          <div class="grid">
+            <label>Year
+              <input id="year" placeholder="e.g., 2019"/>
+            </label>
+            <label>Make
+              <input id="make" placeholder="e.g., Toyota"/>
+            </label>
+            <label>Model
+              <input id="model" placeholder="e.g., Camry"/>
+            </label>
+          </div>
+
+          <label>VIN (optional, improves accuracy)
+            <div class="row">
+              <input id="vin" placeholder="17 characters"/>
+              <button class="btn" id="decodeBtn" type="button">Decode</button>
+            </div>
+            <div class="muted small" id="specs"></div>
+          </label>
+
+          <div class="suggest card">
+            <div>
+              <div class="muted small">Suggested oil</div>
+              <div id="oil" class="strong">—</div>
+            </div>
+            <div>
+              <div class="muted small">Suggested filter</div>
+              <div id="filter" class="strong">—</div>
+            </div>
+            <div>
+              <div class="muted small">Source</div>
+              <div id="source" class="strong">—</div>
+            </div>
+          </div>
+
+          <label>Notes
+            <textarea id="notes" rows="3" placeholder="Parking instructions, time window, special requests…"></textarea>
+          </label>
+
+          <div class="row wrap gap">
+            <a id="mailtoLink" class="btn primary" href="#">Email Request</a>
+            <button class="btn" id="copyBtn" type="button">Copy Details</button>
+          </div>
+
+          <p class="muted tiny">Emails go to <strong>clearyourwoods@gmail.com</strong></p>
+          <p class="muted tiny"><strong>Disclaimer:</strong> Always verify oil viscosity and filter part numbers against OEM specs before service.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="faq" class="container faq">
+      <h3>FAQ</h3>
+      <details class="card"><summary>Do I need a VIN?</summary><p>No. VIN helps confirm the exact engine and trim. You can also enter year/make/model manually.</p></details>
+      <details class="card"><summary>What oil brands do you use?</summary><p>Major-brand full‑synthetic oils meeting API/ILSAC specs. We match viscosity to your manufacturer’s recommendation.</p></details>
+      <details class="card"><summary>How long does service take?</summary><p>Most curbside oil changes take 30–45 minutes, depending on your vehicle and site setup.</p></details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="yearNow"></span> Mobile Oil Caddie</span>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
